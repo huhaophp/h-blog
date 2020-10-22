@@ -14,7 +14,6 @@ func init() {
 	authController := new(admin.AuthController)
 	homeController := new(admin.HomeController)
 	fileController := new(admin.FileController)
-	configController := new(admin.ConfigController)
 	cateController := new(admin.CategoryController)
 	articleController := new(admin.ArtcileController)
 
@@ -39,11 +38,6 @@ func init() {
 		group.POST("articles/{id}/delete", articleController.Delete)
 		group.POST("file", fileController.Store)
 		group.POST("markdown/file", fileController.MarkdownFileStore)
-		// 通用配置
-		group.GET("configs", configController.List)
-		group.POST("configs/add", configController.Add)
-		group.POST("configs/{id}/edit", configController.Edit)
-		group.POST("configs/{id}/delete", configController.Delete)
 	})
 
 	// web routes.

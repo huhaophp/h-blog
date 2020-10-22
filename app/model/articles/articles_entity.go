@@ -20,9 +20,6 @@ type Entity struct {
     Cover      string      `orm:"cover"       json:"cover"`       //   
     Content    string      `orm:"content"     json:"content"`     //   
     MdContent  string      `orm:"md_content"  json:"md_content"`  //   
-    ViewNum    int         `orm:"view_num"    json:"view_num"`    //   
-    LikeNum    int         `orm:"like_num"    json:"like_num"`    //   
-    CommentNum int         `orm:"comment_num" json:"comment_num"` //   
     From       int         `orm:"from"        json:"from"`        //   
     Status     int         `orm:"status"      json:"status"`      //   
     CreatedAt  *gtime.Time `orm:"created_at"  json:"created_at"`  //   

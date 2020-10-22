@@ -57,7 +57,7 @@ a {
     text-align: center;
 }
 
-.nav .logo {
+.nav .logo a{
     color: #1b8bf9;
     font-weight: bold;
 }

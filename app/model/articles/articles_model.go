@@ -32,9 +32,6 @@ var (
         Cover       string //   
         Content     string //   
         MdContent   string //   
-        ViewNum     string //   
-        LikeNum     string //   
-        CommentNum  string //   
         From        string //   
         Status      string //   
         CreatedAt   string //   
@@ -48,9 +45,6 @@ var (
         Cover:      "cover",        
         Content:    "content",      
         MdContent:  "md_content",   
-        ViewNum:    "view_num",     
-        LikeNum:    "like_num",     
-        CommentNum: "comment_num",  
         From:       "from",         
         Status:     "status",       
         CreatedAt:  "created_at",   
