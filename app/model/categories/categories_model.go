@@ -24,11 +24,11 @@ var (
 	Model = &arModel{g.DB("default").Table(Table).Safe()}
 	// Columns defines and stores column names for table categories.
 	Columns = struct {
-		Id         string //   
-        Name       string //   
-        Sort       string //   
-        Status     string //   
-        CreatedAt  string //   
+		Id         string //                         
+        Name       string // 栏目名称                
+        Sort       string // 栏目排序                
+        Status     string // 栏目状态:0-正常/1-隐藏  
+        CreatedAt  string //                         
         UpdatedAt  string //
 	}{
 		Id:        "id",          

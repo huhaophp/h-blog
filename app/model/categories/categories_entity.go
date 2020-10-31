@@ -12,12 +12,12 @@ import (
 
 // Entity is the golang structure for table categories.
 type Entity struct {
-    Id        uint        `orm:"id,primary" json:"id"`         //   
-    Name      string      `orm:"name"       json:"name"`       //   
-    Sort      int         `orm:"sort"       json:"sort"`       //   
-    Status    int         `orm:"status"     json:"status"`     //   
-    CreatedAt *gtime.Time `orm:"created_at" json:"created_at"` //   
-    UpdatedAt *gtime.Time `orm:"updated_at" json:"updated_at"` //   
+    Id        uint        `orm:"id,primary" json:"id"`         //                         
+    Name      string      `orm:"name"       json:"name"`       // 栏目名称                
+    Sort      int         `orm:"sort"       json:"sort"`       // 栏目排序                
+    Status    int         `orm:"status"     json:"status"`     // 栏目状态:0-正常/1-隐藏  
+    CreatedAt *gtime.Time `orm:"created_at" json:"created_at"` //                         
+    UpdatedAt *gtime.Time `orm:"updated_at" json:"updated_at"` //                         
 }
 
 // OmitEmpty sets OPTION_OMITEMPTY option for the model, which automatically filers

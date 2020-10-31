@@ -12,18 +12,18 @@ import (
 
 // Entity is the golang structure for table articles.
 type Entity struct {
-    Id         uint        `orm:"id,primary"  json:"id"`          //   
-    Title      string      `orm:"title"       json:"title"`       //   
-    Summary    string      `orm:"summary"     json:"summary"`     //   
-    CategoryId int         `orm:"category_id" json:"category_id"` //   
-    Tags       string      `orm:"tags"        json:"tags"`        //   
-    Cover      string      `orm:"cover"       json:"cover"`       //   
-    Content    string      `orm:"content"     json:"content"`     //   
-    MdContent  string      `orm:"md_content"  json:"md_content"`  //   
-    From       int         `orm:"from"        json:"from"`        //   
-    Status     int         `orm:"status"      json:"status"`      //   
-    CreatedAt  *gtime.Time `orm:"created_at"  json:"created_at"`  //   
-    UpdatedAt  *gtime.Time `orm:"updated_at"  json:"updated_at"`  //   
+    Id         uint        `orm:"id,primary"  json:"id"`          //                                
+    Title      string      `orm:"title"       json:"title"`       // 文章标题                       
+    Summary    string      `orm:"summary"     json:"summary"`     // 文章简介绍                     
+    CategoryId int         `orm:"category_id" json:"category_id"` // 文章栏目ID                     
+    Tags       string      `orm:"tags"        json:"tags"`        // 文章标签集合                   
+    Cover      string      `orm:"cover"       json:"cover"`       // 文章封面                       
+    Content    string      `orm:"content"     json:"content"`     // 文章内容                       
+    MdContent  string      `orm:"md_content"  json:"md_content"`  // 文章markdown内容               
+    From       int         `orm:"from"        json:"from"`        // 文章来源:0-原创/1-转载/2-其他  
+    Status     int         `orm:"status"      json:"status"`      // 文章状态:1-发布/2-草稿/3-隐藏  
+    CreatedAt  *gtime.Time `orm:"created_at"  json:"created_at"`  //                                
+    UpdatedAt  *gtime.Time `orm:"updated_at"  json:"updated_at"`  //                                
 }
 
 // OmitEmpty sets OPTION_OMITEMPTY option for the model, which automatically filers

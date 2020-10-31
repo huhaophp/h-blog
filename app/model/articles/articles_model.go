@@ -24,17 +24,17 @@ var (
 	Model = &arModel{g.DB("default").Table(Table).Safe()}
 	// Columns defines and stores column names for table articles.
 	Columns = struct {
-		Id          string //   
-        Title       string //   
-        Summary     string //   
-        CategoryId  string //   
-        Tags        string //   
-        Cover       string //   
-        Content     string //   
-        MdContent   string //   
-        From        string //   
-        Status      string //   
-        CreatedAt   string //   
+		Id          string //                                
+        Title       string // 文章标题                       
+        Summary     string // 文章简介绍                     
+        CategoryId  string // 文章栏目ID                     
+        Tags        string // 文章标签集合                   
+        Cover       string // 文章封面                       
+        Content     string // 文章内容                       
+        MdContent   string // 文章markdown内容               
+        From        string // 文章来源:0-原创/1-转载/2-其他  
+        Status      string // 文章状态:1-发布/2-草稿/3-隐藏  
+        CreatedAt   string //                                
         UpdatedAt   string //
 	}{
 		Id:         "id",           
