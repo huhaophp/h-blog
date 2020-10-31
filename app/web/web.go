@@ -25,7 +25,7 @@ func (c *WebController) Home(r *ghttp.Request) {
 	if err != nil {
 		response.ViewExit(r, loyout, g.Map{"mainTpl": errorTpl, "error": err.Error()})
 	}
-
+	req.Status = 1
 	total, list, err := articles.List(&req)
 	if err != nil {
 		response.ViewExit(r, loyout, g.Map{"mainTpl": errorTpl, "error": err.Error()})

@@ -18,6 +18,7 @@ type ListReqEntity struct {
 	PageNum    int    `p:"page"`
 	PageSize   int    `p:"page_size"`
 	Keywords   string `p:"keywords"`
+	Status     int    `p:"status"`
 }
 
 // AddReqEntity 添加文章请求实体
@@ -41,6 +42,9 @@ func List(req *ListReqEntity) (total int, list gdb.Result, err error) {
 	}
 	if req.Keywords != "" {
 		model = model.Where("a.title LIKE ?", fmt.Sprintf("%%%s%%", req.Keywords))
+	}
+	if req.Status > -1 {
+		model = model.Where("a.status = ?", req.Status)
 	}
 	total, err = model.Count()
 	if err != nil {
@@ -69,6 +73,7 @@ func List(req *ListReqEntity) (total int, list gdb.Result, err error) {
 func Find(id int) (item gdb.Record, err error) {
 	item, err = g.DB().Table(Table+" a").
 		Where("a.id", id).
+		Where("a.status", 1).
 		InnerJoin(categories.Table+" c", "a.category_id=c.id").
 		Fields("a.*,c.name category_name").
 		One()

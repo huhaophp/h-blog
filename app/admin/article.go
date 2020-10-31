@@ -27,6 +27,7 @@ func (c *ArtcileController) List(r *ghttp.Request) {
 	if err != nil {
 		response.ViewExit(r, layout, g.Map{"mainTpl": errorTpl, "error": err.Error()})
 	}
+	req.Status = -1
 	total, list, err := articles.List(&req)
 	if err != nil {
 		response.ViewExit(r, layout, g.Map{"mainTpl": errorTpl, "error": err.Error()})
